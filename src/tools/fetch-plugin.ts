@@ -37,10 +37,10 @@ export const fetchPlugin = (inputCode: string) => {
           .replace(/'/g, "\\'");
 
         const contents = `
-            const style = document.createElement('style');
-            style.innerText = '${escapedCSS}';
-            document.head.appendChild(style);
-          `;
+          const style = document.createElement('style');
+          style.innerText = '${escapedCSS}';
+          document.head.appendChild(style);
+        `;
 
         const result: esbuild.OnLoadResult = {
           loader: "jsx",
