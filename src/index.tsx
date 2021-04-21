@@ -1,11 +1,12 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 import * as esbuild from "esbuild-wasm";
+import "bulmaswatch/superhero/bulmaswatch.min.css";
 import { fetchPlugin, unpkgPathPlugin } from "./tools";
+import { CodeEditor } from "./components";
 
 const App = () => {
   const [input, setInput] = React.useState<string>("");
-  const [code, setCode] = React.useState<string>("");
   const ref = React.useRef<any>();
   const iframe = React.useRef<any>();
 
@@ -38,7 +39,6 @@ const App = () => {
       },
     });
 
-    // setCode(result.outputFiles[0].text);
     iframe.current.contentWindow.postMessage(result.outputFiles[0].text, "*");
   };
 
@@ -64,6 +64,7 @@ const App = () => {
 
   return (
     <div>
+      <CodeEditor initialValue="" onChange={(value) => setInput(value)} />
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
@@ -71,8 +72,12 @@ const App = () => {
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
-      <pre>{code}</pre>
-      <iframe ref={iframe} sandbox="allow-scripts" srcDoc={html} />
+      <iframe
+        ref={iframe}
+        title="preview"
+        sandbox="allow-scripts"
+        srcDoc={html}
+      />
     </div>
   );
 };
