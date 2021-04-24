@@ -1,13 +1,14 @@
-import * as React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import "bulmaswatch/superhero/bulmaswatch.min.css";
-import { CodeCell } from "./components";
+import { CellList } from "./components";
+import { store } from "./state";
 
 const App = () => {
   return (
-    <div>
-      <CodeCell />
-    </div>
+    <Provider store={store}>
+      <CellList />
+    </Provider>
   );
 };
 
