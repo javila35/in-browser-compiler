@@ -1,3 +1,5 @@
+export * from "./action-bar";
+export * from "./add-cell";
 export * from "./cell-list";
 export * from "./cell-list-item";
 export * from "./code-cell";
