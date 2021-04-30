@@ -32,26 +32,29 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
       state.order = state.order.filter((id) => id !== action.payload);
       return state;
     /** Add a cell at a specific location */
-    case ActionType.INSERT_CELL_BEFORE:
+    case ActionType.INSERT_CELL_AFTER:
       /** Newly created cell */
       const cell: Cell = {
         id: randomID(),
         type: action.payload.type,
         content: "",
       };
+
       /** Adding cell to data object */
       state.data[cell.id] = cell;
       /** Finding the index where the cell was inserted */
       const foundIndex = state.order.findIndex(
         (id) => id === action.payload.id
       );
+
       /** If foundIndex < 0 the new cell is the last cell */
       if (foundIndex < 0) {
-        state.order.push(cell.id);
+        state.order.unshift(cell.id);
       } else {
         /** If foundIndex > 0 place the new cell in it's appropriate order */
-        state.order.splice(foundIndex, 0, cell.id);
+        state.order.splice(foundIndex + 1, 0, cell.id);
       }
+
       return state;
     /** Move cell up or down in order */
     case ActionType.MOVE_CELL:
