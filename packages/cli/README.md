@@ -2,7 +2,7 @@
 
 _This project was built by following along with a [Typescript / React course on Udemy](https://www.udemy.com/course/react-and-typescript-build-a-portfolio-project/) by [Stephen Grider](https://www.udemy.com/user/sgslo/)._
 
-![image](./screenshot.png)
+![image](https://res.cloudinary.com/deijyaaid/image/upload/v1620238345/npm_screenshot_dfgk53.png)
 
 ## Running the app
 
