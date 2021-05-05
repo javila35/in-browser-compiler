@@ -1,6 +1,6 @@
 {
   "name": "@javila-jsnote/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "files": [
     "dist"
@@ -17,10 +17,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@javila-jsnote/local-client": "^1.0.0"
+    "@javila-jsnote/local-client": "^1.0.1"
   },
   "devDependencies": {
-    "@javila-jsnote/local-api": "^1.0.0",
+    "@javila-jsnote/local-api": "^1.0.1",
     "@types/node": "^15.0.1",
     "commander": "^7.2.0",
     "esbuild": "0.8.26",
