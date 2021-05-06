@@ -6,7 +6,7 @@ _This project was built by following along with a [Typescript / React course on 
 
 ## Running the app
 
-The easiest way is to run this application is using npx in your terminal. _You may need to update your version of [npm](https://github.com/npm/cli#installation)._
+The easiest way is to run this application is using npx in your terminal. Your code and markdown will be saved to a file _`notebook.js` by defualt_ in the directory you run this command from. _You may need to update your version of [npm](https://github.com/npm/cli#installation)._
 
 ```
 npx @javila-jsnote/cli serve
